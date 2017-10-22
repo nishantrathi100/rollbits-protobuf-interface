@@ -41,6 +41,6 @@ message Route {
  	
     required string group = 1;
     required string ip = 2;
- 	  required string nodeid = 3;
+    required string nodeid = 3;
  	
  }
