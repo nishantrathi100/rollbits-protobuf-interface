@@ -52,8 +52,9 @@ message User {
  message NetworkDiscoveryPacket{
  	
  	enum Sender{
-    SERVER_NODE=0;
-    END_USER_CLIENT=1;
+    EXTERNAL_SERVER_NODE=0;
+    INTERNAL_SERVER_NODE=1;
+    END_USER_CLIENT=2;
     }
     
     	enum Mode{
