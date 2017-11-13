@@ -12,10 +12,10 @@ message Route {
         GROUP = 4;
         MESSAGES_REQUEST = 5;
         MESSAGES_RESPONSE = 6;
-	HEADER = 7;
+        HEADER = 7;
     }
 
-    // a node should not have a value though this is not enforced
+    //a node should not have a value though this is not enforced
     required int64 id = 1;
     required Path path = 2;
 
@@ -36,7 +36,7 @@ message User {
         ACCESS = 1;
         DELETE = 2;
     }
-    // a node should not have a value though this is not enforced
+    //a node should not have a value though this is not enforced
     required string uname = 1;
     optional string email = 2;
     optional string password = 3;
@@ -73,11 +73,11 @@ message Message {
         STALE = 1;
     }
 
-    // a node should not have a value though this is not enforced
+    //a node should not have a value though this is not enforced
     required Type type = 1;
     required string from = 2;
     required string payload = 3;
-    required string to = 4; // would be groupId if the type is GROUP or else userId if the type is SINGLE
+    required string to = 4; //would be groupId if the type is GROUP or else userId if the type is SINGLE
     required string timestamp = 5;
     required Status status = 6;
     required ActionType action = 7;
@@ -91,6 +91,7 @@ message MessagesRequest {
     }
 
     required Type type = 1;
+    required string id = 2; //would be groupId if the type is GROUP or else userId if the type is USER
 }
 
 message MessagesResponse {
@@ -101,7 +102,8 @@ message MessagesResponse {
     }
 
     required Type type = 1;
-    repeated Message messages = 2;
+    required string id = 2; //would be groupId if the type is GROUP or else userId if the type is USER
+    repeated Message messages = 3;
 }
 
 message NetworkDiscoveryPacket {
