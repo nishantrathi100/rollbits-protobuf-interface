@@ -19,14 +19,15 @@ message Route {
     required int64 id = 1;
     required Path path = 2;
 
-    optional string payload = 3;
-    optional NetworkDiscoveryPacket networkDiscoveryPacket = 4;
-    optional User user = 5;
-    optional Message message = 6;
-    optional Group group = 7;
-    optional MessagesRequest messagesRequest = 8;
-    optional MessagesRequest messagesResponse = 9;
-    optional Header header = 10;
+    oneof payload{
+	    NetworkDiscoveryPacket networkDiscoveryPacket = 3;
+	    User user = 4;
+	    Message message = 5;
+    }
+    optional Group group = 6;
+    optional MessagesRequest messagesRequest = 7;
+    optional MessagesRequest messagesResponse = 8;
+    optional Header header = 9;
 }
 
 message User {
