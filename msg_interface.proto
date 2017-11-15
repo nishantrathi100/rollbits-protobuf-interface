@@ -27,7 +27,7 @@ message Route {
     }
     optional Group group = 6;
     optional MessagesRequest messagesRequest = 7;
-    optional MessagesRequest messagesResponse = 8;
+    optional MessagesResponse messagesResponse = 8;
     optional Header header = 9;
     optional Response response=10;
 }
